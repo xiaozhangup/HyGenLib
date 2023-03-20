@@ -3,6 +3,9 @@ package me.xiaozhangup.hygen.text;
 import java.util.ArrayList;
 import java.util.List;
 
+import static me.xiaozhangup.hygen.text.Convert.hex2RGB;
+import static me.xiaozhangup.hygen.text.Convert.rgb2Hex;
+
 public class GradientColor {
 
     List<String> colors;
@@ -20,7 +23,7 @@ public class GradientColor {
 
         List<String> colors = new ArrayList<>();
 
-        for (int i = 0; i < number; i++){
+        for (int i = 0; i < number; i++) {
             int aR = a[0];
             int aG = a[1];
             int aB = a[2];
@@ -39,27 +42,12 @@ public class GradientColor {
         return this;
     }
 
-    public String color(int level) {
-        return colors.get(level);
+    public Color color(int level) {
+        return new Color(colors.get(level));
     }
 
     private int calculateColor(int a, int b, int step, int number) {
-        return a + (b-a) * number / step;
-    }
-
-    private String rgb2Hex(int r,int g,int b){
-        return String.format("#%02X%02X%02X", r,g,b);
-    }
-
-    private int[] hex2RGB(String hexStr){
-        if(hexStr != null && hexStr.length() == 7){
-            int[] rgb = new int[3];
-            rgb[0] = Integer.valueOf(hexStr.substring( 1, 3 ), 16);
-            rgb[1] = Integer.valueOf(hexStr.substring( 3, 5 ), 16);
-            rgb[2] = Integer.valueOf(hexStr.substring( 5, 7 ), 16);
-            return rgb;
-        }
-        return null;
+        return a + (b - a) * number / step;
     }
 
 }

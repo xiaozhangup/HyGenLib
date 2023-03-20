@@ -1,8 +1,5 @@
 package me.xiaozhangup.hygen.inv;
 
-import org.bukkit.inventory.Inventory;
-import org.bukkit.inventory.ItemStack;
-
 public class InvHelper {
 
     public static int slotFrom(int x, int y) {

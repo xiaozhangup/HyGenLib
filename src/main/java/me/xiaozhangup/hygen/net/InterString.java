@@ -8,11 +8,11 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.Optional;
 
-public class InternetString {
+public class InterString {
 
     String url;
 
-    public InternetString(String url) {
+    public InterString(String url) {
         this.url = url;
     }
 
@@ -20,8 +20,8 @@ public class InternetString {
         return this.url;
     }
 
-    public InternetString placeholder(String old, String place) {
-        return new InternetString(this.url.replace(old, place));
+    public InterString placeholder(String old, String place) {
+        return new InterString(this.url.replace(old, place));
     }
 
     public Optional<String> request() {

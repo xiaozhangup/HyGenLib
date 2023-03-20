@@ -1,19 +1,13 @@
 package me.xiaozhangup.hygen.net;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.nio.charset.StandardCharsets;
 import java.util.Optional;
 
-public class RepetitionInternetString {
+public class RepeatableInterString {
 
     String url;
     String holder;
 
-    public RepetitionInternetString(String url, String holder) {
+    public RepeatableInterString(String url, String holder) {
         this.url = url;
         this.holder = holder;
     }
@@ -24,7 +18,7 @@ public class RepetitionInternetString {
 
     public Optional<String> request(String place) {
         var request = this.url.replace(this.holder, place);
-        InternetString internetString = new InternetString(request);
+        InterString internetString = new InterString(request);
         return internetString.request();
     }
 
